@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const { ObjectId } = mongoose.Schema.Types;
 
 const jobSchema = mongoose.Schema(
 	{
@@ -46,6 +47,14 @@ const jobSchema = mongoose.Schema(
 		applyURL: {
 			type: String,
 			validate: [validator.isURL, "Please provide a valid url"],
+		},
+		manager: {
+			name: String,
+			contactNumber: String,
+			id: {
+				type: ObjectId,
+				ref: "User",
+			},
 		},
 	},
 	{

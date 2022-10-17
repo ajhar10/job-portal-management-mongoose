@@ -1,13 +1,10 @@
 /*
-{
-"email": "test@test.com",
+{   
+    "email": "test@test.com",
     "password": "test123@#ABC",
     "confirmPassword": "test123@#ABC",
     "firstName": "test",
     "lastName": "user",
-    "shippingAddress": "944 osthir Street",
-    "presentAddress": "944 osthir Street",
-    "permanentAddress": "944 Russell Street",
     "imageURL": ""
 }
 //for manager

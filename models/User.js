@@ -40,8 +40,8 @@ const userSchema = mongoose.Schema(
 
 		role: {
 			type: String,
-			enum: ["candidate", "hiring manager", "admin"],
-			default: "buyer",
+			enum: ["candidate", "hr", "admin"],
+			default: "hr",
 		},
 
 		firstName: {
@@ -69,12 +69,6 @@ const userSchema = mongoose.Schema(
 		imageURL: {
 			type: String,
 			validate: [validator.isURL, "Please provide a valid url"],
-		},
-
-		status: {
-			type: String,
-			default: "full-time",
-			enum: ["full-time", "part-time", "project-base"],
 		},
 
 		passwordChangedAt: Date,

@@ -8,8 +8,10 @@ app.use(express.json());
 app.use(cors());
 
 // ROUTES
+const userRoutes = require("./routes/user.route");
 
 // ROUTES USE
+app.use("/user", userRoutes);
 
 app.get("/", (req, res) => {
 	res.send("Route is working! YaY!");
