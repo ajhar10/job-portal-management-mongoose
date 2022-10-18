@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
+const { ObjectId } = mongoose.Schema.Types;
 
 const userSchema = mongoose.Schema(
 	{
@@ -70,6 +71,13 @@ const userSchema = mongoose.Schema(
 			type: String,
 			validate: [validator.isURL, "Please provide a valid url"],
 		},
+
+		jobs: [
+			{
+				type: ObjectId,
+				ref: "Job",
+			},
+		],
 
 		passwordChangedAt: Date,
 		passwordResetToken: String,

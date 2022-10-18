@@ -9,9 +9,11 @@ app.use(cors());
 
 // ROUTES
 const userRoutes = require("./routes/user.route");
+const jobRoutes = require("./routes/job.route");
 
 // ROUTES USE
 app.use("/user", userRoutes);
+app.use("/", jobRoutes);
 
 app.get("/", (req, res) => {
 	res.send("Route is working! YaY!");

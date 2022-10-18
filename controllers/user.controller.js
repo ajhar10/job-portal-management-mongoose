@@ -101,15 +101,3 @@ const getMe = async (req, res) => {
 };
 
 module.exports = { singup, login, getMe };
-
-// {
-// 	"role": "admin",
-// 	"status": "active",
-// 	"email": "programmer442@gmail.com",
-// 	"password": "test@TEST123",
-//  "confirmPassword": "test@TEST123",
-// 	"firstName": "md",
-// 	"lastName": "tasib",
-// 	"shippingAddress": "fatick",
-// 	"imageURL": "https://i.ibb.co/WnFSs9Y/unnamed.webp"
-// }

@@ -50,7 +50,6 @@ const jobSchema = mongoose.Schema(
 		},
 		manager: {
 			name: String,
-			contactNumber: String,
 			id: {
 				type: ObjectId,
 				ref: "User",
