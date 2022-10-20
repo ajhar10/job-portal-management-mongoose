@@ -9,19 +9,8 @@
 }
 //for manager
 /*
-"name":"Manager",
-"email":"managerctg@test.com",
-"password":"tasib123456##",
-"confirmPassword":"tasib123456##",
-"firtsName":"Manager of",
-"lastName":"CTG",
-"contactNumber":"11111111111",
-"shippingAddress:"944 osthir Street",
-"division":"chattogram",
-"imageURL":"",
-"status":"active",
-"emergencyContactNumber":"01712345678",
-"presentAddress":"944 osthir Street",
-"permanentAddress":"944 Russell Street",
-"nationalIdImageURL":"",
+{   
+    "email": "hr@gmail.com",
+    "password": "Hrmaneger123#"
+}
 */

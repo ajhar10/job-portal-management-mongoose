@@ -35,7 +35,7 @@ const getJobs = async (req, res) => {
 		}
 
 		if (req.query.page || req.query.limit) {
-			const { page = 1, limit = 5 } = req.query;
+			const { page = 1, limit = 3 } = req.query;
 
 			const skip = (page - 1) * Number(limit);
 			queries.skip = skip;

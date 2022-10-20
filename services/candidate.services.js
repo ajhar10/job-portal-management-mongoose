@@ -1,7 +1,7 @@
 const Job = require("../models/Job");
 
 const getJobsService = async (filters, queries) => {
-	const { skip, limit, fields, sortBy } = queries;
+	const { skip, limit = 3, fields, sortBy } = queries;
 
 	const jobs = await Job.find(filters)
 		.skip(skip)

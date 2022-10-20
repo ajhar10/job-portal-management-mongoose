@@ -1,5 +1,4 @@
 const Job = require("../models/Job");
-const User = require("../models/User");
 
 const createJobService = async data => await Job.create(data);
 

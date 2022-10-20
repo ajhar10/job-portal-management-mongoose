@@ -4,20 +4,18 @@ const { ObjectId } = mongoose.Schema.Types;
 
 const jobSchema = mongoose.Schema(
 	{
-		title: {
-			type: String,
-			required: [true, "Please provide a title for this product."],
-			trim: true,
-			unique: false,
-			lowercase: true,
-			minLenght: [3, "title must be al last 3 characters."],
-			maxLenght: [100, "title is too large"],
-		},
 		email: {
 			type: String,
 			validate: [validator.isEmail, "Provide a valid Email"],
 			trim: true,
 			lowercase: true,
+		},
+		title: {
+			type: String,
+			trim: true,
+			lowercase: true,
+			minLenght: [3, "title must be al last 3 characters."],
+			maxLenght: [100, "title is too large"],
 		},
 		description: {
 			type: String,
