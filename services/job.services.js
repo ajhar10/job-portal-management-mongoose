@@ -1,18 +1,8 @@
 const Job = require("../models/Job");
 const User = require("../models/User");
 
-const createJobService = async data => {
-	const job = await Job.create(data);
+const createJobService = async data => await Job.create(data);
 
-	// UPDATE JOB
-	const { _id: jobId, manager } = product;
+const getJobDetailsByIdService = async id => await Job.findById({ _id: id });
 
-	const res = await User.updateOne(
-		{ _id: manager.id },
-		{ $push: { jobs: jobId } }
-	);
-
-	return job;
-};
-
-module.exports = { createJobService };
+module.exports = { createJobService, getJobDetailsByIdService };

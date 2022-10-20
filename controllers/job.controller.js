@@ -1,4 +1,7 @@
-const { createJobService } = require("../services/job.services");
+const {
+	createJobService,
+	getJobDetailsByIdService,
+} = require("../services/job.services");
 
 const createJob = async (req, res) => {
 	try {
@@ -7,7 +10,6 @@ const createJob = async (req, res) => {
 		res.status(200).json({
 			status: "success",
 			message: "Data inserted successfully",
-			data: result,
 		});
 	} catch (error) {
 		res.status(400).json({
@@ -18,4 +20,23 @@ const createJob = async (req, res) => {
 	}
 };
 
-module.exports = { createJob };
+const getJobDetailsById = async (req, res) => {
+	try {
+		const { id } = req.params;
+
+		const result = await getJobDetailsByIdService(id);
+
+		res.status(200).json({
+			status: "success",
+			data: result,
+		});
+	} catch (error) {
+		res.status(400).json({
+			status: "Failed",
+			message: "can't get the job",
+			error: error.message,
+		});
+	}
+};
+
+module.exports = { createJob, getJobDetailsById };
