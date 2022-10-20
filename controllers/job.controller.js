@@ -1,6 +1,7 @@
 const {
 	createJobService,
 	getJobDetailsByIdService,
+	updateJobByIdService,
 } = require("../services/job.services");
 
 const createJob = async (req, res) => {
@@ -39,4 +40,23 @@ const getJobDetailsById = async (req, res) => {
 	}
 };
 
-module.exports = { createJob, getJobDetailsById };
+const updateJobById = async (req, res) => {
+	try {
+		const { id } = req.params;
+
+		const result = await updateJobByIdService(id, req.body);
+
+		res.status(200).json({
+			status: "success",
+			data: result,
+		});
+	} catch (error) {
+		res.status(400).json({
+			status: "Failed",
+			message: "can't update the job",
+			error: error.message,
+		});
+	}
+};
+
+module.exports = { createJob, getJobDetailsById, updateJobById };
