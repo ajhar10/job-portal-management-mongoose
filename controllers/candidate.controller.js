@@ -1,4 +1,7 @@
-const { getJobsService } = require("../services/candidate.services");
+const {
+	getJobsService,
+	getJobDetailsByIdService,
+} = require("../services/candidate.services");
 
 const getJobs = async (req, res) => {
 	try {
@@ -54,4 +57,23 @@ const getJobs = async (req, res) => {
 	}
 };
 
-module.exports = { getJobs };
+const getJobDetailsById = async (req, res) => {
+	try {
+		const { id } = req.params;
+
+		const job = await getJobDetailsByIdService(id);
+
+		res.status(200).json({
+			status: "sussess",
+			data: job,
+		});
+	} catch (error) {
+		res.status(400).json({
+			status: "Failed",
+			message: "Can't get the job",
+			error: error.message,
+		});
+	}
+};
+
+module.exports = { getJobs, getJobDetailsById };

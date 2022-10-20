@@ -15,4 +15,6 @@ const getJobsService = async (filters, queries) => {
 	return { totalJobs, pageCount, jobs };
 };
 
-module.exports = { getJobsService };
+const getJobDetailsByIdService = async id => await Job.findById({ _id: id });
+
+module.exports = { getJobsService, getJobDetailsByIdService };
