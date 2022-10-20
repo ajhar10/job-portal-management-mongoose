@@ -10,9 +10,11 @@ app.use(cors());
 // ROUTES
 const userRoutes = require("./routes/user.route");
 const jobRoutes = require("./routes/job.route");
+const candidateRoutes = require("./routes/candidate.route");
 
 // ROUTES USE
 app.use("/user", userRoutes);
+app.use("/jobs", candidateRoutes);
 app.use("/", jobRoutes);
 
 app.get("/", (req, res) => {
