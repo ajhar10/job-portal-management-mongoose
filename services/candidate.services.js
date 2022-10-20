@@ -7,6 +7,7 @@ const getJobsService = async (filters, queries) => {
 		.skip(skip)
 		.limit(limit)
 		.select(fields)
+		.select("-role -description -email -createdAt -updatedAt")
 		.sort(sortBy);
 
 	const totalJobs = await Job.countDocuments(filters);
